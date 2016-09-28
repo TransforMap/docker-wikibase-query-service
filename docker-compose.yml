@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  wqs-blazegraph:
+    build: .
+    expose: ["80"]
+    env_file: ["./frontend.env"]
+    networks: ["frontend"]
+
+networks:
+  frontend:
+    external:
+      name: nginx_default
+
